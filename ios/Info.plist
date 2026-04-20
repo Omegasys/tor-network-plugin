@@ -1,0 +1,50 @@
+<!-- ios/Info.plist -->
+<plist version="1.0">
+<dict>
+    <!-- App Configuration -->
+    <key>CFBundleDisplayName</key>
+    <string>Tor Network Plugin</string>
+    <key>CFBundleIdentifier</key>
+    <string>com.example.tornetworkplugin</string>
+    <key>CFBundleVersion</key>
+    <string>1.0.0</string>
+
+    <!-- Permissions for using the Network Extension (VPN) -->
+    <key>UIBackgroundModes</key>
+    <array>
+        <string>networking</string>
+    </array>
+    
+    <!-- Request permissions for network extension (VPN) -->
+    <key>NSAppTransportSecurity</key>
+    <dict>
+        <key>NSAllowsArbitraryLoads</key>
+        <true/>
+    </dict>
+
+    <!-- VPN Network Extension Configuration -->
+    <key>NetworkExtension</key>
+    <dict>
+        <key>NEVPNProtocolType</key>
+        <string>IPSec</string>
+    </dict>
+
+    <!-- Permissions for using the Internet -->
+    <key>NSMicrophoneUsageDescription</key>
+    <string>We need access to the microphone for VPN routing (if applicable).</string>
+    <key>NSCameraUsageDescription</key>
+    <string>We need access to the camera for VPN routing (if applicable).</string>
+
+    <!-- Privacy Permissions -->
+    <key>NSLocationWhenInUseUsageDescription</key>
+    <string>We need access to your location to improve network routing.</string>
+
+    <!-- Background App Refresh (needed for background service operation) -->
+    <key>UIBackgroundModes</key>
+    <array>
+        <string>fetch</string>
+        <string>processing</string>
+    </array>
+
+</dict>
+</plist>

@@ -1,0 +1,10 @@
+{
+  "tor": {
+    "path": "/usr/local/bin/tor",
+    "config_file": "/etc/tor/torrc"
+  },
+  "logging": {
+    "log_level": "DEBUG",
+    "log_file": "app.log"
+  }
+}

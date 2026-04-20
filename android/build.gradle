@@ -1,0 +1,38 @@
+// android/build.gradle
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 33  // Set to the latest SDK version you target
+
+    defaultConfig {
+        applicationId "com.example.tornetworkplugin"  // Change to your app's package name
+        minSdkVersion 21  // Minimum SDK version you want to support
+        targetSdkVersion 33  // Target the latest SDK version
+        versionCode 1
+        versionName "1.0"
+
+        // Enabling Multidex if the app exceeds the limit of 64k methods
+        multiDexEnabled true
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false  // Disable code minification for simplicity
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    // Allow Java 8 language features
+    compileOptions {
+        sourceCompatibility = JavaVersion.VERSION_1_8
+        targetCompatibility = JavaVersion.VERSION_1_8
+    }
+}
+
+dependencies {
+    implementation 'com.android.support:multidex:1.0.3'
+    implementation 'org.torproject.android:tor-android-core:0.3.5'  // Tor library for Android
+    implementation 'com.squareup.okhttp3:okhttp:4.9.1'  // For networking, if needed
+
+    // Add other necessary dependencies for your app
+}

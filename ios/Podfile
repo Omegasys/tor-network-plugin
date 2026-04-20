@@ -1,0 +1,14 @@
+# ios/Podfile
+platform :ios, '12.0'  # Set the minimum iOS version your app will support
+
+target 'TorNetworkPlugin' do
+  use_frameworks!
+
+  # CocoaPod for TOR integration (if available)
+  pod 'Tor', '~> 0.3.5'  # Assuming Tor has an iOS-compatible CocoaPod
+
+  # Network Extension framework for VPN services
+  pod 'NetworkExtension', '~> 1.0'
+
+  # Other dependencies can go here (e.g., networking libraries)
+end
